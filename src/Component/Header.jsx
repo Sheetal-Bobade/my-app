@@ -12,16 +12,29 @@ const Header = () => {
     }
   }, [activeLink]);
 
+  
+
   const handleSetActive = (link) => {
     setActiveLink(link);
 
-    // Find the corresponding section and add class 'section-show' if link is active
+    // Convert link to lowercase to match section id
     const sectionId = link.toLowerCase(); // Assuming section id matches link text (e.g., 'home', 'about')
-    const section = document.getElementById(sectionId);
-    if (section) {
-      section.classList.add('section-show');
-      console.log(sectionId)
-    }
+
+    // Get all sections
+    const sections = document.querySelectorAll('.section');
+    
+    sections.forEach(section => {
+        if (section.id === sectionId) {
+            // Add class 'section-show' to the active section
+            section.classList.add('section-show');
+            console.log(sectionId);
+        } else {
+            // Remove class 'section-show' from inactive sections
+            section.classList.remove('section-show');
+        }
+    })
+
+    
     
   };
 
