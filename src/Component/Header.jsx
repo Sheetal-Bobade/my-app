@@ -12,8 +12,6 @@ const Header = () => {
     }
   }, [activeLink]);
 
-  
-
   const handleSetActive = (link) => {
     setActiveLink(link);
 
@@ -22,6 +20,7 @@ const Header = () => {
     const section = document.getElementById(sectionId);
     if (section) {
       section.classList.add('section-show');
+      console.log(sectionId)
     }
     
   };
@@ -31,7 +30,7 @@ const Header = () => {
   <header id="header">
     <div className="container">
 
-      <h1><a href="index.html">Emily Jones</a></h1>
+      <h1><a href="/">Emily Jones</a></h1>
     
     
       <h2>I'm a passionate <span>graphic designer</span> from New York</h2>
