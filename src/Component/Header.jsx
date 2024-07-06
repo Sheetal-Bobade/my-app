@@ -44,7 +44,7 @@ const Header = () => {
     <div className="container">
 
       <h1><a href="/">Emily Jones</a></h1>
-      <h1><a href="/">Emily Jones</a></h1>
+      
     
     
       <h2>I'm a passionate <span>graphic designer</span> from New York</h2>
