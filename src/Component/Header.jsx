@@ -29,12 +29,25 @@ const Header = () => {
 
   }, [activeLink]);
 
+  
+  const [navbarMobile, setNavbarMobile] = useState(false);
+  const [toggleIcon, setToggleIcon] = useState(false);
+
+  const handleMobileNavToggle = () => {
+    setNavbarMobile(!navbarMobile);
+    setToggleIcon(!toggleIcon);
+  };
+
   const handleSetActive = (link, event) => {
     event.preventDefault(); // Prevent default anchor behavior
     setActiveLink(link);
 
     // Set the URL hash
     window.location.hash = link.toLowerCase();
+
+     // Remove mobile menu and switch icon back to bi-list
+     setNavbarMobile(false);
+     setToggleIcon(false);
   };
 
 
@@ -43,7 +56,7 @@ const Header = () => {
       <div className="container">
         <h1><a href="/">Emily Jones</a></h1>
         <h2>I'm a passionate <span>graphic designer</span> from New York</h2>
-        <nav id="navbar" className="navbar">
+        <nav id="navbar" className={`navbar ${navbarMobile ? 'navbar-mobile' : ''}`}>
           <ul>
             <li><a className={activeLink === 'Home' ? 'nav-link active' : 'nav-link'} href="#header" onClick={(e) => handleSetActive('Home', e)}>Home</a></li>
             <li><a className={activeLink === 'About' ? 'nav-link active' : 'nav-link'} href="#about" onClick={(e) => handleSetActive('About', e)}>About</a></li>
@@ -52,7 +65,10 @@ const Header = () => {
             <li><a className={activeLink === 'Portfolio' ? 'nav-link active' : 'nav-link'} href="#portfolio" onClick={(e) => handleSetActive('Portfolio', e)}>Portfolio</a></li>
             <li><a className={activeLink === 'Contact' ? 'nav-link active' : 'nav-link'} href="#contact" onClick={(e) => handleSetActive('Contact', e)}>Contact</a></li>
           </ul>
-          <i className="bi bi-list mobile-nav-toggle"></i>
+          <i
+            className={`bi ${toggleIcon ? 'bi-x' : 'bi-list'} mobile-nav-toggle`}
+            onClick={handleMobileNavToggle}
+          ></i>
         </nav>
         <div className="social-links">
           <a href="/" className="twitter"><i className="bi bi-twitter"></i></a>
