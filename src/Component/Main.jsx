@@ -1,6 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from 'react';
 
-function Main() {
+
+const Main = () => {
+ 
+
+  const [activeFilter, setActiveFilter] = useState('*');
+
+  useEffect(() => {
+    const items = document.querySelectorAll('.portfolio-item');
+    items.forEach(item => {
+      if (activeFilter === '*' || item.classList.contains(activeFilter.substring(1))) {
+        item.style.display = 'block';
+      } else {
+        item.style.display = 'none';
+      }
+    });
+  }, [activeFilter]);
+
+  const handleFilterClick = (filter) => {
+    setActiveFilter(filter);
+  };
+
   return (
     
   <>
@@ -461,12 +481,36 @@ function Main() {
 
       <div className="row">
         <div className="col-lg-12 d-flex justify-content-center">
-          <ul id="portfolio-flters">
-            <li data-filter="*" className="filter-active">All</li>
-            <li data-filter=".filter-app">App</li>
-            <li data-filter=".filter-card">Card</li>
-            <li data-filter=".filter-web">Web</li>
-          </ul>
+        <ul id="portfolio-flters">
+      <li 
+        data-filter="*" 
+        className={`filter ${activeFilter === '*' ? 'filter-active' : ''}`} 
+        onClick={() => handleFilterClick('*')}
+      >
+        All
+      </li>
+      <li 
+        data-filter=".filter-app" 
+        className={`filter ${activeFilter === '.filter-app' ? 'filter-active' : ''}`} 
+        onClick={() => handleFilterClick('.filter-app')}
+      >
+        App
+      </li>
+      <li 
+        data-filter=".filter-card" 
+        className={`filter ${activeFilter === '.filter-card' ? 'filter-active' : ''}`} 
+        onClick={() => handleFilterClick('.filter-card')}
+      >
+        Card
+      </li>
+      <li 
+        data-filter=".filter-web" 
+        className={`filter ${activeFilter === '.filter-web' ? 'filter-active' : ''}`} 
+        onClick={() => handleFilterClick('.filter-web')}
+      >
+        Web
+      </li>
+    </ul>
         </div>
       </div>
 
@@ -480,7 +524,7 @@ function Main() {
               <p>App</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-1.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="./portfolio-details.jsx" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -494,7 +538,7 @@ function Main() {
               <p>Web</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-2.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="./portfolio-details.jsx" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -508,7 +552,7 @@ function Main() {
               <p>App</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-3.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 2"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="./portfolio-details.jsx" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -522,7 +566,7 @@ function Main() {
               <p>Card</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-4.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 2"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="./portfolio-details.jsx" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -536,7 +580,7 @@ function Main() {
               <p>Web</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-5.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 2"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="./portfolio-details.jsx" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -550,7 +594,7 @@ function Main() {
               <p>App</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-6.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="/portfolio-details.jsx" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -564,7 +608,7 @@ function Main() {
               <p>Card</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-7.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="./portfolio-details.jsx" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -578,7 +622,7 @@ function Main() {
               <p>Card</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-8.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="./portfolio-details.jsx" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
@@ -592,7 +636,7 @@ function Main() {
               <p>Web</p>
               <div className="portfolio-links">
                 <a href="assets/img/portfolio/portfolio-9.jpg" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
+                <a href="./portfolio-details.jsx" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" className="portfolio-details-lightbox" title="Portfolio Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
           </div>
