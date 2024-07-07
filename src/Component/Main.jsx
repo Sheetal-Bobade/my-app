@@ -1,10 +1,10 @@
 import React from "react";
+
 function Main() {
   return (
     
   <>
-  
-  <section id="about" className="about">
+  <section id="about" className="section about">
           <div className="about-me container">
 
               <div className="section-title">
@@ -317,7 +317,7 @@ function Main() {
 
           </div>
 
-      </section><section id="resume" className="resume">
+      </section><section id="resume" className=" section resume">
               <div className="container">
 
                   <div className="section-title">
@@ -388,7 +388,7 @@ function Main() {
               </div>
           </section>
 
-          <section id="services" className="services">
+          <section id="services" className="section services">
     <div className="container">
 
       <div className="section-title">
@@ -451,7 +451,7 @@ function Main() {
   </section>
 
 
-  <section id="portfolio" className="portfolio">
+  <section id="portfolio" className="section portfolio">
     <div className="container">
 
       <div className="section-title">
@@ -604,7 +604,7 @@ function Main() {
   </section>
 
 
-  <section id="contact" className="contact">
+  <section id="contact" className="section contact">
     <div className="container">
 
       <div className="section-title">
