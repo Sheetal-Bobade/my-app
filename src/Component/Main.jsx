@@ -24,6 +24,8 @@ const Main = () => {
   return (
     
   <>
+
+
   <section id="about" className="section about">
           <div className="about-me container">
 
