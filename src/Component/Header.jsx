@@ -43,7 +43,7 @@ const Header = () => {
     setActiveLink(link);
 
     // Set the URL hash
-    window.location.hash = link.toLowerCase();
+    //window.location.hash = link.toLowerCase();
 
      // Remove mobile menu and switch icon back to bi-list
      setNavbarMobile(false);
