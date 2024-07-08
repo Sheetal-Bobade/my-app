@@ -22,7 +22,8 @@ const Main = () => {
                   <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
                       <h3>UI/UX &amp; Graphic Designer</h3>
                       <p className="fst-italic">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
+                          labore et dolore
                           magna aliqua.
                       </p>
                       <div className="row">
