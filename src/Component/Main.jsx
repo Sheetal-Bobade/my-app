@@ -27,7 +27,6 @@ const Main = () => {
     
   <>
 
-
   <section id="about" className="section about">
           <div className="about-me container">
 

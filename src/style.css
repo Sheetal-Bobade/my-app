@@ -353,7 +353,7 @@ section {
 }
 
 section.section-show {
-  top: 240px;
+  top: 100px;
   bottom: auto;
   opacity: 1;
   padding-bottom: 45px;
