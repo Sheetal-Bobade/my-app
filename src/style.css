@@ -1004,6 +1004,10 @@ section .container {
   opacity: 1;
 }
 
+.swiper-button-prev, .swiper-button-next{
+  color: #ffffff;
+}
+
 .swiper-button-prev::after, .swiper-button-next::after {
   font-size: 28px;
 }
