@@ -54,8 +54,8 @@ const Header = () => {
   return (
     <header id="header">
       <div className="container">
-        <h1><a href="/">Emily Jones</a></h1>
-        <h2>I'm a passionate <span>graphic designer</span> from New York</h2>
+        <h1><a href="/">Sheetal Bobade</a></h1>
+        <h2>I'm a passionate <span>Web Developer</span></h2>
         <nav id="navbar" className={`navbar ${navbarMobile ? 'navbar-mobile' : ''}`}>
           <ul>
             <li><a className={activeLink === 'Home' ? 'nav-link active' : 'nav-link'} href="#header" onClick={(e) => handleSetActive('Home', e)}>Home</a></li>

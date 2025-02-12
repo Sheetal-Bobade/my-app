@@ -20,11 +20,17 @@ const Main = () => {
                       <img src="assets/img/me.jpg" className="img-fluid" alt="" />
                   </div>
                   <div className="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-                      <h3>UI/UX &amp; Graphic Designer</h3>
+                      <h3>Web Developer</h3>
                       <p className="fst-italic">
-                          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut 
-                          labore et dolore
-                          magna aliqua.
+                      I am a passionate web developer with a strong foundation in front-end technologies 
+                      and a keen eye for detail. With expertise in HTML, CSS, Bootstrap, Tailwind CSS, JavaScript, and modern 
+                      libraries like React, I specialize in building responsive, user-friendly websites 
+                      and applications. I enjoy transforming complex problems into intuitive digital solutions,
+                       ensuring optimal performance and seamless user experiences. From dynamic content management
+                        systems to interactive web features, I am committed to creating web solutions that not
+                         only meet functional requirements but also provide aesthetic appeal.
+
+
                       </p>
                       <div className="row">
                           <div className="col-lg-6">
